@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>อิ่มใจ เดลิเวอรี</title>
+<meta name="description" content="แอปสั่งอาหารจำลอง 19 ร้าน เลือกเมนู ใส่ตะกร้า จ่ายเงิน และดูคนขับวิ่งมาส่งได้ครบทุกขั้นตอน โดยไม่มีการสั่งหรือจ่ายเงินจริง">
+<meta name="theme-color" content="#F8F5F3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15110F" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="อิ่มใจ">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Mitr:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  /* ใช้ธีมที่ผู้ใช้เลือกไว้ก่อนวาดหน้า กันจอกระพริบ */
+  try { var t = JSON.parse(localStorage.getItem('imjai.theme')); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+</head>
+<body>
+<!--APP-->
+<div id="app">
+  <main id="view" tabindex="-1"></main>
+</div>
+<div id="dock">
+  <div id="bar" hidden></div>
+  <div id="cartbar" hidden></div>
+  <nav id="tabbar" aria-label="เมนูหลัก"></nav>
+</div>
+<div id="layer"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:24px;text-align:center">อิ่มใจต้องใช้ JavaScript กรุณาเปิดใช้งานในเบราว์เซอร์</p></noscript>
+<!--/APP-->
+<script src="js/data/options.js"></script>
+<script src="js/data/shops-1.js"></script>
+<script src="js/data/shops-2.js"></script>
+<script src="js/data/shops-3.js"></script>
+<script src="js/core.js"></script>
+<script src="js/views-shop.js"></script>
+<script src="js/views-cart.js"></script>
+<script src="js/views-order.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "อิ่มใจ เดลิเวอรี",
+  "short_name": "อิ่มใจ",
+  "description": "แอปสั่งอาหารจำลอง กดสั่งได้ทุกขั้นตอนเหมือนจริง โดยไม่มีการสั่งหรือจ่ายเงินจริง",
+  "lang": "th",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F8F5F3",
+  "theme_color": "#E23E1B",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
