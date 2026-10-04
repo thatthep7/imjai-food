@@ -347,6 +347,8 @@ p { margin: 0; }
 /* item sheet */
 .it-hero { position: relative; height: 196px; }
 .it-hero .emo { font-size: 100px; }
+.it-photo { width: 100%; height: 100%; object-fit: cover; }
+.it-credit { position: absolute; left: 12px; bottom: 8px; font-size: 11px; line-height: 1; color: #fff; background: rgb(0 0 0 / .45); padding: 3px 7px; border-radius: 999px; backdrop-filter: blur(2px); }
 .it-close { position: absolute; right: 12px; top: 14px; }
 .it-head { padding-top: 16px; padding-bottom: 8px; }
 .it-head h2 { font-size: 23px; }

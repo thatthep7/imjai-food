@@ -450,7 +450,11 @@
     });
     const html = `
       <div class="sheet-body" id="it-body">
-        <div class="it-hero cover" style="${IJ.shopVars(s)}"><span class="emo">${it.e}</span><button type="button" class="round it-close" data-close aria-label="ปิด">${icon('close')}</button></div>
+        <div class="it-hero cover${it.photo ? ' has-photo' : ''}" style="${IJ.shopVars(s)}">
+          ${it.photo ? `<img class="it-photo" src="${it.photo.url}" alt="${esc(it.name)}">
+          <span class="it-credit">ภาพ: ${esc(it.photo.by)} / ${esc(it.photo.src)} (${esc(it.photo.lic)})</span>` : `<span class="emo">${it.e}</span>`}
+          <button type="button" class="round it-close" data-close aria-label="ปิด">${icon('close')}</button>
+        </div>
         <div class="it-head pad-x">
           <h2>${esc(it.name)}</h2>
           ${it.desc ? `<p class="sub">${esc(it.desc)}</p>` : ''}

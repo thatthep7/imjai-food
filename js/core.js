@@ -50,6 +50,11 @@
   IJ.save = (...keys) => keys.forEach((k) => store.set(k, S[k]));
 
   /* ---------- จัดข้อมูลร้าน/เมนูให้ค้นง่าย ---------- */
+  /* รูปถ่ายจริงของเมนู (ไม่บังคับ) ใช้แทนอีโมจิในหน้ารายละเอียดเมนู ที่มาต้องเป็นรูปเสรี/อนุญาตใช้ซ้ำได้ */
+  const PHOTOS = {
+    'padaeng.0': { url: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Kraphao_mu_khai_dao.jpg', by: 'Takeaway', src: 'Wikimedia Commons', lic: 'CC BY-SA 3.0' }
+  };
+
   IJ.shop = {};
   IJ.item = {};
   IJ.SHOPS.forEach((s, si) => {
@@ -60,11 +65,12 @@
         const [name, price, e, desc, opts, flags] = r;
         const f = (flags || '').split(/\s+/).filter(Boolean);
         const sale = f.find((x) => x.startsWith('sale:'));
+        const id = s.id + '.' + s.items.length;
         const it = {
-          id: s.id + '.' + s.items.length, shop: s, name, price, e, desc: desc || '',
+          id, shop: s, name, price, e, desc: desc || '',
           opts: (opts || '').split(',').map((x) => x.trim()).filter(Boolean),
           hot: f.includes('hot'), isNew: f.includes('new'), rec: f.includes('rec'),
-          was: sale ? price + Number(sale.slice(5)) : 0, sec: secI
+          was: sale ? price + Number(sale.slice(5)) : 0, sec: secI, photo: PHOTOS[id] || null
         };
         s.items.push(it);
         IJ.item[it.id] = it;
